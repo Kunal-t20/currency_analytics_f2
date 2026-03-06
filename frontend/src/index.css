@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ─── Design Tokens ─────────────────────────────── */
+:root {
+  --font: 'Inter', system-ui, sans-serif;
+
+  --accent-green:  #00e676;
+  --accent-blue:   #00c6ff;
+  --accent-purple: #a855f7;
+  --accent-gold:   #fbbf24;
+
+  --glass-bg:      rgba(255,255,255,0.07);
+  --glass-border:  rgba(255,255,255,0.12);
+  --glass-blur:    blur(18px);
+
+  --text-primary:  #f0f4ff;
+  --text-muted:    rgba(240,244,255,0.55);
+  --shadow-card:   0 20px 60px rgba(0,0,0,0.55);
+
+  --radius-md:     14px;
+  --radius-lg:     22px;
+  --transition:    0.22s cubic-bezier(.4,0,.2,1);
+}
+
+/* ─── Reset ─────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font);
+  background-color: #0d1117;
+  color: var(--text-primary);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ─── Scrollbar ──────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.28); }
+
+/* ─── Selection ─────────────────────────────────── */
+::selection { background: rgba(0,198,255,0.25); color: #fff; }
+
+/* ─── Base elements ─────────────────────────────── */
+input, select, button {
+  font-family: var(--font);
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+a { color: var(--accent-blue); text-decoration: none; }
+a:hover { text-decoration: underline; }

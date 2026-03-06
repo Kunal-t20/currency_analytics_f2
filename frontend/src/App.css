@@ -1,0 +1,129 @@
+/* ─── App Root ───────────────────────────────────── */
+.app-root {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 24px 32px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 12% 18%, rgba(0, 198, 255, 0.13) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 80%, rgba(168, 85, 247, 0.13) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(0, 230, 118, 0.06) 0%, transparent 60%),
+    linear-gradient(145deg, #0d1117 0%, #111827 60%, #0f172a 100%);
+}
+
+/* ─── Ambient Orbs ───────────────────────────────── */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  animation: drift 12s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+.orb-1 {
+  width: 380px;
+  height: 380px;
+  background: rgba(0, 198, 255, 0.09);
+  top: -80px;
+  left: -100px;
+  animation-delay: 0s;
+}
+
+.orb-2 {
+  width: 320px;
+  height: 320px;
+  background: rgba(168, 85, 247, 0.10);
+  bottom: 0;
+  right: -80px;
+  animation-delay: 4s;
+}
+
+.orb-3 {
+  width: 240px;
+  height: 240px;
+  background: rgba(0, 230, 118, 0.07);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: 8s;
+}
+
+@keyframes drift {
+  from {
+    transform: translateY(0) scale(1);
+  }
+
+  to {
+    transform: translateY(30px) scale(1.06);
+  }
+}
+
+/* ─── Header ─────────────────────────────────────── */
+.app-header {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.app-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.logo-icon {
+  font-size: 2rem;
+  filter: drop-shadow(0 0 8px rgba(0, 198, 255, 0.7));
+}
+
+.logo-text {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #00c6ff 0%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.app-tagline {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
+/* ─── Main Layout ────────────────────────────────── */
+.app-main {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 28px;
+  max-width: 960px;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ─── Footer ─────────────────────────────────────── */
+.app-footer {
+  position: relative;
+  z-index: 1;
+  margin-top: 40px;
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* ─── Responsive ─────────────────────────────────── */
+@media (max-width: 700px) {
+  .app-main {
+    flex-direction: column;
+    align-items: center;
+  }
+}
